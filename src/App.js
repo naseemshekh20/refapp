@@ -42,7 +42,13 @@ export default class App extends Lightning.Component {
         x: 1650,
         y: 15,
         zIndex: 11
-      } 
+      },
+      CamImage: {
+        mountX: 0.5,
+        x: 1650,
+        y: 200,
+        zIndex: 11
+      }
     }
   }
 
@@ -50,11 +56,12 @@ export default class App extends Lightning.Component {
     // Taken from L&T version
     // This fix will be removed once get acess body element through lighting framework.
     // issue is addressed here https://github.com/rdkcentral/Lightning-CLI/pull/78/commits/6bc1cc3521b62d2fb19dae6b9020fe9677897ada
-    var style = document.createElement('style')
+  /*  var style = document.createElement('style')
     document.head.appendChild(style)
     style.sheet.insertRule(
       '@media all { html {height: 100%; width: 100%;} *,body {margin:0; padding:0;} canvas { position: absolute; z-index: 2; } body {  background-color:transparent; width: 100%; height: 100%;} }'
     )
+    */
   }
 
   async _init() {
@@ -163,6 +170,19 @@ export default class App extends Lightning.Component {
 
   _handleDown() {
     this._setState('Navbar')
+  }
+
+  _captureKey(event){
+
+    for (let a in event){
+      console.log("capture key event prop a :: "+a+" && value ::" +event[a])
+    }
+
+    console.log("capture key :: "+event.code)
+   if (event.code == 'KeyI' || event.key == 'i'){
+    console.log("event.code :: "+event.code)
+    this.tag("CamImage").src = Utils.asset('cache/images/defaultuserimage.jpg')
+   }
   }
 
   _handleKey(key) {

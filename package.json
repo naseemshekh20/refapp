@@ -1,5 +1,5 @@
 {
-  "name": "com.epam.lgi",
+  "name": "com.ltts.lgi",
   "description": "LGI",
   "dependencies": {
     "axios": "^0.19.2",

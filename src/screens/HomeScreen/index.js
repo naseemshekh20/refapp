@@ -1,6 +1,5 @@
 import BaseScreen from '../BaseScreen'
 import theme from '@/themes/default'
-import ChannelBar from '@/components/ChannelBar'
 import LoadingIndicator from '@/components/LoadingIndicator'
 import * as player  from '@/services/player/'
 import constants from './constants'
@@ -53,7 +52,6 @@ export default class HomeScreen extends BaseScreen {
 
   async _play(entry) {
     if (this._focused) {
-      this.tag('ChannelBar').visible = true
     }
     this._playerSource = entry.locator
     await player.playQAM(entry)
@@ -97,12 +95,8 @@ export default class HomeScreen extends BaseScreen {
     })
   }
 
-  $mediaplayerProgress(currentTime, duration) {
-    this.tag('ChannelBar').updateProgress(100 * currentTime / duration)
-  }
-
   _getFocused() {
-    return this.tag('ChannelBar')
+    
   }
 
   _onChannelBarReady(info) {
@@ -116,8 +110,8 @@ export default class HomeScreen extends BaseScreen {
   }
 
   _focus() {
-    this.tag('Title').text.text = 'Channel bar'
-    this.tag('ChannelBar').visible = true
+    
+    
     this._focused = true
     this.fireAncestors('$hideMenu')
   }
@@ -125,12 +119,10 @@ export default class HomeScreen extends BaseScreen {
   _unfocus() {
     this.tag('Title').text.text = 'Main menu'
     this.tag('Title').visible = true
-    this.tag('ChannelBar').visible = false
     this._focused = false
   }
 
   _handleUp() {
     this.tag('Title').visible = !this.tag('Title').visible
-    this.tag('ChannelBar').visible = !this.tag('ChannelBar').visible
   }
 }

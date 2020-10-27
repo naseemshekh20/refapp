@@ -46,9 +46,8 @@ export default class Navbar extends Lightning.Component {
 
   _init() {
     this.tag('Menu').items = [
-      { text: 'MOVIES', route: 'movies' },
-      { text: 'APPS', route: 'apps' },
-      { text: 'SETTINGS', route: 'settings' }
+      { text: 'Motion Detection', route: 'camera' },
+      { text: 'Geofence', route: 'geofence' }
     ]
 
     self = this
