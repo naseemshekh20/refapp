@@ -3,67 +3,67 @@
         "channelId": "channel1",
         "logo": "img/tvchannels/1.png",
         "channelNumber": 1,
-        "locator": "tune://pgmno=-1&frequency=301000000&modulation=16&symbol_rate=6875"
+        "locator": "http://clips-media-aka.warnermediacdn.com/cnn/clips/2021-01/79895-97f21462b4db4236abcbd68a5819234b/mp4/cms3-CNN-trump-alamo-border-wall-texas-remarks-vpx-primary-58581-79895-1920x1080_8000k.mp4"
     },
     {
         "channelId": "channel2",
         "logo": "img/tvchannels/2.png",
         "channelNumber": 2,
-        "locator": "tune://pgmno=-1&frequency=302000000&modulation=16&symbol_rate=6875"
+        "locator": "http://cdn.metrological.com/hls/sanfrancisco720.m3u8"
     },
     {
         "channelId": "channel3",
         "logo": "img/tvchannels/3.png",
         "channelNumber": 3,
-        "locator": "tune://pgmno=-1&frequency=303000000&modulation=16&symbol_rate=6875"
+        "locator": "http://cdn.metrological.com/hls/hongkong720.m3u8"
     },
     {
         "channelId": "channel4",
         "logo": "img/tvchannels/4.png",
         "channelNumber": 4,
-        "locator": "tune://pgmno=-1&frequency=304000000&modulation=16&symbol_rate=6875"
+        "locator": "http://cdn.metrological.com/hls/china720.m3u8"
     },
     {
         "channelId": "channel5",
         "logo": "img/tvchannels/5.png",
         "channelNumber": 5,
-        "locator": "tune://pgmno=-1&frequency=305000000&modulation=16&symbol_rate=6875"
+        "locator": "http://cdn.metrological.com/hls/dubai720.m3u8"
     },
     {
         "channelId": "channel6",
         "logo": "img/tvchannels/6.png",
         "channelNumber": 6,
-        "locator": "tune://pgmno=-1&frequency=306000000&modulation=16&symbol_rate=6875"
+        "locator": "http://cdn.metrological.com/hls/hawaii720.m3u8"
     },
     {
         "channelId": "channel7",
         "logo": "img/tvchannels/7.png",
         "channelNumber": 7,
-        "locator": "tune://pgmno=-1&frequency=307000000&modulation=16&symbol_rate=6875"
+        "locator": "http://cdn.metrological.com/hls/liwa720.m3u8"
     },
     {
         "channelId": "channel8",
         "logo": "img/tvchannels/8.png",
         "channelNumber": 8,
-        "locator": "tune://pgmno=-1&frequency=308000000&modulation=16&symbol_rate=6875"
+        "locator": "http://cdn.metrological.com/hls/london720.m3u8"
     },
     {
         "channelId": "channel9",
         "logo": "img/tvchannels/9.png",
         "channelNumber": 9,
-        "locator": "tune://pgmno=-1&frequency=309000000&modulation=16&symbol_rate=6875"
+        "locator": "http://cdn.metrological.com/hls/losangeles720.m3u8"
     },
     {
         "channelId": "channel10",
         "logo": "img/tvchannels/10.png",
         "channelNumber": 10,
-        "locator": "tune://pgmno=-1&frequency=310000000&modulation=16&symbol_rate=6875"
+        "locator": "http://cdn.metrological.com/hls/newyork720.m3u8"
     },
     {
         "channelId": "channel11",
         "logo": "img/tvchannels/11.png",
         "channelNumber": 11,
-        "locator": "tune://pgmno=-1&frequency=311000000&modulation=16&symbol_rate=6875"
+        "locator": "http://cdn.metrological.com/hls/sanfrancisco720.m3u8"
     },
     {
         "channelId": "channel12",

@@ -17,7 +17,7 @@
  * limitations under the License.
  */
 
-import { Lightning, Utils } from '@lightningjs/sdk'
+import { Lightning,Utils } from '@lightningjs/sdk'
 import Item from '@/components/List/Item'
 import theme from '@/themes/default'
 import constants from '../../constants'
@@ -51,9 +51,10 @@ export default class TVChannelScreenItem extends Item {
   }
 
   set item(value) {
-    super.item = value;
-    this.tag("Image").patch({ src: Utils.asset(value.logo), x: 50 });
+   super.item= value;
+   this.tag("Image").patch({src: Utils.asset(value.logo),x:50});
   }
+
 
   set size({ w, h }) {
     if (w && h) {

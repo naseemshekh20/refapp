@@ -17,13 +17,14 @@
  * limitations under the License.
  */
 
-import { Lightning, Utils } from '@lightningjs/sdk'
+import { Lightning, Utils , VideoPlayer} from '@lightningjs/sdk'
 import { getActiveScreen, navigateForward, navigateBackward, navigate } from './lib/Router'
 import Navbar from './components/Navbar'
 import SplashScreen from './screens/SplashScreen'
 import { init as initPlayers } from './services/player'
 import NumberInput from './components/NumberInput'
 import CurrentTime from './components/CurrentTime'
+import Player from './Player'
 
 export default class App extends Lightning.Component {
   static _template() {
@@ -43,6 +44,7 @@ export default class App extends Lightning.Component {
         type: CurrentTime,
         visible: true
       } 
+      
     }
   }
 
@@ -62,7 +64,7 @@ export default class App extends Lightning.Component {
     )
   }
 
-  async _init() {
+  async _init() {    
     this._setState('Splash')
     const testIncreaseSplashVisibility = new Promise((resolve, reject) => {
       setTimeout(() => resolve(), 2000)
@@ -80,11 +82,13 @@ export default class App extends Lightning.Component {
         y: 15,
         src: Utils.asset('cache/images/rdk-logo.png'),
         zIndex: 11
-      }
+      },
+      Player: {
+        type: Player
+    }
     })
 
     this._setState('Navbar')
-
     const configFile = await fetch(Utils.asset('config.ssm.json'))
     const configJson = await configFile.json()
 
@@ -94,11 +98,24 @@ export default class App extends Lightning.Component {
     })
   }
 
+
+  $cloudplay(source) {
+    console.log("--------"+source);
+        this.tag('Player').mplay(source);
+  }
+
   static _states() {
     return [
+      class Playing extends this{
+        // delegate focuspath to the player
+        _getFocused() {
+            return this.tag("Player")
+        }
+    },
       class Splash extends this {
         $enter() {
           this.tag('Splash').visible = true
+       
         }
 
         $exit() {

@@ -90,7 +90,6 @@ function setUpPlayer({ ipPlayerMode, endpoint }) {
   if (isRdkMode()) {
     return rdkPlayerManager.initPlayer()
   }
-
   sessionManager.setPlayerEndpoint(endpoint)
   return Promise.resolve()
 }

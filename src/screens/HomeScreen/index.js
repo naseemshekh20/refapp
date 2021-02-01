@@ -74,6 +74,7 @@ export default class HomeScreen extends BaseScreen {
     if (this._focused) {
       this.tag('ChannelBar').visible = true
     }
+    console.log(entry);
     this._playerSource = entry.locator
     await player.playQAM(entry)
 

@@ -51,12 +51,14 @@ export default class MoviesScreen extends BaseScreen {
     const { layout } = await response.json()
     this._categories = layout.body
     this.tag('Title').text.text = layout.header.title
-    const children = layout.body.map(({ label, items, itemWidth, itemHeight }, index, lists) => {
+    const children = layout.body.map(
+      ({ label, items, itemWidth, itemHeight }, index, lists) => {
       let y = 0
       for (let i = 0; i < index; i++) {
         const element = lists[i]
         y += (element.itemHeight || 170) + 200
       }
+     
       return {
         type: MoviesScreenList,
         itemSize: { w: itemWidth, h: itemHeight },
@@ -64,7 +66,9 @@ export default class MoviesScreen extends BaseScreen {
         items: items,
         y: y
       }
-    })
+    }
+    
+    )
     this._index = 0
     this.tag('Lists').children = children
   }

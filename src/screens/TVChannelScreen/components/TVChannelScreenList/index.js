@@ -24,7 +24,7 @@ import constants from '../../constants'
 
 export default class TVChannelScreenList extends List {
   static _template() {
-    return {
+    return {     
       Label: {
         text: {
           fontSize: constants.LIST_LABEL_FONTSIZE
@@ -32,12 +32,12 @@ export default class TVChannelScreenList extends List {
       },
       Items: {
         y: 0
-      }
+      }      
     }
   }
 
   set items(value) {
-
+    
     this._itemsData = value
     this._itemSize = this._itemSize ? this._itemSize : { w: constants.LIST_ITEM_DEFAULT_WIDTH, h: constants.LIST_ITEM_DEFAULT_HEIGHT }
     this.tag('Items').children = value.map((item, index) => {
@@ -45,7 +45,7 @@ export default class TVChannelScreenList extends List {
         type: ItemWrapper,
         construct: TVChannelScreenItem,
         y: index * (this._itemSize.h + constants.ITEMS_CAP),
-        size: this._itemSize,
+        size: this._itemSize,    
         item: item
       }
     })
@@ -66,18 +66,20 @@ export default class TVChannelScreenList extends List {
       this.setIndex(this._index + 1)
     }
   }
+  
+
 
   setIndex(index) {
-
+    
     const prevIndex = this._index
     this._index = index;
 
     let itemCap = this._itemSize.h + constants.ITEMS_CAP;
     let displayArea = constants.LIST_VIEW_HEIGHT;
-    let bottamFocusItem = Math.floor(displayArea / itemCap);
+    let bottamFocusItem = Math.floor(displayArea/itemCap);
 
     if (index > prevIndex) {
-      if (((index * itemCap) + this.tag('Items').y) > displayArea) {
+        if(((index * itemCap) + this.tag('Items').y)>displayArea){
         this.tag('Items').setSmooth('y', (itemCap - ((index - bottamFocusItem) * itemCap)));
       }
     } else if (index < prevIndex) {
@@ -85,5 +87,7 @@ export default class TVChannelScreenList extends List {
         this.tag('Items').setSmooth('y', (itemCap - ((index + 1) * itemCap)));
       }
     }
+
   }
+
 }

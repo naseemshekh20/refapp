@@ -117,4 +117,6 @@ export default class List extends Lightning.Component {
   _getVisibleItemsOnScreen() {
     return Math.floor(1500 / (this._itemSize.w + 50))
   }
+
+  
 }
